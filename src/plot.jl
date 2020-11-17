@@ -30,11 +30,19 @@ function plt(out_file, f, g, def, start)
       ylim=def,
       aspect_ratio=1,
     )
-    for (name, traj) in trajectories
+    for (j, (name, traj)) in enumerate(trajectories)
       p = Plots.plot!(
         p,
         traj[1:i,1],
         traj[1:i,2],
+        label=missing,
+        color=colors[j],
+      )
+      p = Plots.scatter!(
+        p,
+        [traj[i,1]],
+        [traj[i,2]],
+        color=colors[j],
         label=name,
       )
     end
