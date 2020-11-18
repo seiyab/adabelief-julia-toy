@@ -11,8 +11,6 @@ colors = [
 
 function plt(out_file, f, g, def, start)
   n = 5000
-  def = (-3., 3.)
-  start = [2.5, 0.]
   runners = Dict([
     ("AdaBelief", run_adabelief),
     ("Adam", run_adam),
